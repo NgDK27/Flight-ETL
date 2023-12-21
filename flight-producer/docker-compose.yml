@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  flight:
+    container_name: flight
+    build: .
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: flight
+      SLEEP_TIME: 200
+
+networks:
+  default:
+    external:
+      name: kafka-network
